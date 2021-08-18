@@ -21,11 +21,12 @@ TGraph = Client(
 @TGraph.on_message(filters.command("start"))
 async def start(client, message):
     await message.reply_text(
-        text=f"Hello {message.from_user.first_name}!\n<b>I am Telegram to telegra.ph Image Uploader Bot</b>\n\n▷ Just give me a media under 5MB.\n▷ Then I will download it.\n▷ I will then upload it to the telegra.ph link.",
+        text=f"Hello {message.from_user.first_name}!\n<b>Tôi là phương tiện nhỏ hoặc tệp tin tới bot tải lên liên kết telegra.ph.</b>\n\n▷ Gửi cho tôi file dưới 5MB.\n▷ Sau đó, tôi sẽ tải xuống.\n▷  Sau đó tôi sẽ tải nó lên liên kết telegra.ph.",
         disable_web_page_preview=True,
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="👥 Group", url=f"https://t.me/iZaute/5"), InlineKeyboardButton(text="Channel 📢", url=f"https://t.me/iZaute/6"), ],
-                                           [InlineKeyboardButton(text="🤫 Source", url=f"https://github.com/ZauteKm/Image-Uploader"), InlineKeyboardButton(text="GitHup 🤪", url=f"https://githup.com/ZauteKm"), InlineKeyboardButton(text="Bot Lists 🤖", url=f"https://t.me/iZaute/8"),],
-                                           [InlineKeyboardButton(text="⚜️ Subscribe Now YouTube ⚜️", url=f"https://youtube.com/playlist?list=PLzkiTywVmsSfmhaDdWNZ5PRmmMKGTIxPJ")]])
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="👥 Group", url=f"https://t.me/chiasecamxuc"), InlineKeyboardButton(text="Channel 📢", url=f"https://t.me/cypersex"), ],
+                                           [InlineKeyboardButton(text="🤫 My Site", url=f"https://cypersex.xyz"), InlineKeyboardButton(text="Bots of Ryo 🤪", url=f"https://t.me/botsofryo"), InlineKeyboardButton(text="Contact 🤖", url=f"https://t.me/ryostar"),]
+                                        #   [InlineKeyboardButton(text="⚜️ Subscribe Now YouTube ⚜️", url=f"https://youtube.com/playlist?list=PLzkiTywVmsSfmhaDdWNZ5PRmmMKGTIxPJ")]
+                                          ])
         )
 
 
@@ -41,13 +42,13 @@ async def getimage(client, message):
     try:
         response = upload_file(img_path)
     except Exception as error:
-        await dwn.edit_text(f"<b>Oops something went wrong\n Please ▷Contact @ZauteBot.</b>")
+        await dwn.edit_text(f"<b>Oops something went wrong\n Please ▷Contact @RyoStar.</b>")
         return
     await dwn.edit_text(
-        text=f"<b>Link :-</b> <code>https://telegra.ph{response[0]}</code>,\n\n<b>▷ Please Subscribe</b> ❤️ [@ZauteKm](https://t.me/iZaute/6)",
+        text=f"<b>Link :-</b> <code>https://telegra.ph{response[0]}</code>,\n\n<b>▷ Please Subscribe</b> ❤️ [@BotsOfRyo](https://t.me/BotsOfRyo)",
         disable_web_page_preview=True,
-        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🔗 Open Link", url=f"https://telegra.ph{response[0]}"), InlineKeyboardButton(text="Share Link 👥", url=f"https://telegram.me/share/url?url=https://telegra.ph{response[0]}"), ],
-                                           [InlineKeyboardButton(text="👉 Share & Support Me ❤️", url="https://t.me/share/url?url=Hi%20Friend%2C%0D%0AAm%20Introducing%20a%20Powerful%20%2A%2ATelegraph%20Image%20Upload%20Bot%2A%2A%20for%20Free.%0D%0A%2A%2ABot%20Link%2A%2A%20%3A%20%40TGraphZKbot")]])
+        reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="🔗 Xem liên kết", url=f"https://telegra.ph{response[0]}"), InlineKeyboardButton(text="Chia sẻ liên kết 👥", url=f"https://telegram.me/share/url?url=https://telegra.ph{response[0]}"), ],
+                                           [InlineKeyboardButton(text="👉 Share & Support Me ❤️", url="https://t.me/share/url?url=83ng+k%C3%BD+t.me%2Fcypersex")]])
         )
     shutil.rmtree(tmp, ignore_errors=True)
 
